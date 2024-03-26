@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Background</title>
+    <style>
+        body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.task-module {
+    position: absolute;
+    top: 20px;
+    left: 1500px;
+    z-index: 2;
+}
+
+.task-module ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.task-module ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.task-module ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.video-container video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    text-align: left;
+    padding-left: 10px;
+    padding-bottom: 500px;
+    padding-top: 500px;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 1s ease-in forwards;
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.white-text {
+    color: white;
+}
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Background</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="task-module">
+        <ul>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Our Team</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#"></a></li>
+        </ul>
+    </div>
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="{{ url_for('video', filename='152528 (Original) (1).mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="content">
+        <!-- Animated text with fade-in effect -->
+        <h2 class="fade-in white-text">We Build What You Want!</h2>
+    </div>
+</body>
+</html>
